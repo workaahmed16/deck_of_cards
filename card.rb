@@ -1,6 +1,7 @@
 class Card
 	attr_accessor :rank, :suit
 
+
 	def initialize (rank, suit)
 		@rank = rank
 		@suit = suit
@@ -32,21 +33,14 @@ class Deck
 	def initialize
 		@amt = 0
 		@cards = []
-		10.times do 
-			@cards << Card.random_card_clubs
-		end
+		@ranks = ['A',2,3,4,5,6,7,8,9,10,'J','Q','K']
+        @suits = [:spades, :diamond, :clubs, :hearts]
 
-		10.times do 
-			@cards << Card.random_card_spades
-		end
-
-		10.times do 
-			@cards << Card.random_card_hearts
-		end
-
-		10.times do 
-			@cards << Card.random_card_diamonds
-		end
+        @suits.each do |suit|
+        	@ranks.each do |rank|
+        		@cards << Card.new(rank, suit)
+        	end
+        end
 	end
 
 	def output
@@ -67,6 +61,9 @@ class Deck
 end
 
 deck = Deck.new
+deck.count
+deck.shuffle
+deck.output
 
 
 
