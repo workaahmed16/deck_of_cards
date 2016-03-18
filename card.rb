@@ -58,12 +58,19 @@ class Deck
 		@cards.shuffle!
 	end
 
+	def deal
+		@cards.shift
+	end
+
 end
 
 deck = Deck.new
 deck.count
 deck.shuffle
+deck.deal
 deck.output
+deck.count
+
 
 
 
