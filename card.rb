@@ -53,26 +53,22 @@ class Deck
 		@cards.each do |card|
 			card.output_card
 		end
-
-		puts "Their are #{@amt} cards in this deck!"
 	end
 
 	def count
 		@amt = @cards.count
+		puts "Their are #{@amt} cards in this deck!"
 	end
 
 	def shuffle
 		@cards.shuffle!
 	end
 
-	def deal
-		
-	end
 end
 
 deck = Deck.new
-deck.shuffle
-deck.output
+
+
 
 		
 		
